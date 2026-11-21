@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ce422b" />
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('rustcockpit_theme') || localStorage.getItem('rustadmin_theme') || 'dark';
+          if (theme === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="description" content="High-performance WebRCON administration suite for Rust Dedicated Servers" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="RustCockpit" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <title>RustCockpit WebRCON</title>
+  </head>
+  <body class="bg-zinc-950 text-zinc-100 min-h-screen selection:bg-rust-600 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
